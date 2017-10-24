@@ -1,0 +1,41 @@
+{
+    "V": ["Microcalcification", "Cystic Aspect", "Cancer", "Do Operation", "Keep Watching"],
+    "E": {
+        "Microcalcification" : ["Cancer"],
+        "Cystic Aspect" : ["Cancer"],
+        "Cancer" : [ "Do Operation","Keep Watching"],
+        "Do Operation" : [],
+        "Keep Watching" : []
+    },
+    "F": {
+        "Microcalcification": {
+            "values": ["No", "Yes"],
+            "parents": [],
+            "cpt": [0.999,0.001]
+        },
+
+        "Cystic Aspect": {
+            "values": ["No", "Yes"],
+            "parents": [],
+            "cpt": [0.998,0.002]
+        },
+
+        "Cancer": {
+            "values": ["No","Yes"],
+            "parents": ["Cystic Aspect","Microcalcification"],
+            "cpt": [0.999,0.001,0.71,0.29,0.06,0.94,0.05,0.95]
+        },
+
+        "Do Operation": {
+            "values": ["No","Yes"],
+            "parents": ["Cancer"],
+            "cpt": [0.95,0.05,0.1,0.9]
+        },
+
+        "Keep Watching": {
+            "values": ["No", "Yes"],
+            "parents": ["Cancer"],
+            "cpt":  [0.99,0.01,0.3,0.7]
+        }
+    }
+}
