@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Thyroid_Cancer" numsamples="1000" discsamples="10000">
+	<nodes>
+		<!-- create node "mc" -->
+		<cpt id="mc" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- setting probabilities -->
+			<probabilities>0.28 0.72 </probabilities>
+		</cpt>
+		<!-- create node "he" -->
+		<cpt id="he" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- setting probabilities -->
+			<probabilities>0.15 0.85 </probabilities>
+		</cpt>
+		<!-- create node "ca" -->
+		<cpt id="ca" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>mc he </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.8 0.2 0.6 0.4 0.4 0.6 0.1 0.9 </probabilities>
+		</cpt>
+		<!-- create node "op" -->
+		<cpt id="op" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>ca </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.95 0.05 0.1 0.9 </probabilities>
+		</cpt>
+		<!-- create node "kw" -->
+		<cpt id="kw" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>ca </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.3 0.7 </probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="py2GeNIe 2013" name="Thyroid_Cancer" faultnameformat="nodestate">
+			<node id="mc">
+				<name>mc</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="he">
+				<name>he</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="ca">
+				<name>ca</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="op">
+				<name>op</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="kw">
+				<name>kw</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
